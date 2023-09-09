@@ -16,9 +16,6 @@ export class AppComponent {
   ) {}
 
   ngOnInit() {
-    // this.router.routeReuseStrategy.shouldReuseRoute = () => {
-    //   return false;
-    // };
     this.authService.isLoggedIn.subscribe((status) => {
       this.loginStatus = status;
     });
