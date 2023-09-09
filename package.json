@@ -1,0 +1,36 @@
+{
+  "name": "gabbles",
+  "version": "1.0.0",
+  "scripts": {
+    "db:down": "docker compose down",
+    "db:up": "docker compose up -d",
+    "install": "npm run install:api && npm run install:web",
+    "install:api": "cd ./api && npm install",
+    "install:web": "cd ./web && npm install",
+    "prestart": "npm install && npm run db:up",
+    "start": "concurrently --kill-others \"npm run start:api\" \"npm run start:web\"",
+    "start:api": "cd ./api && npm start",
+    "start:web": "cd ./web && npm start",
+    "test": "jest",
+    "lint:api": "eslint api/src/**/*.ts",
+    "lint:web": "eslint web/src/**/*.ts",
+    "format:api": "eslint api/src/**/*.ts --fix",
+    "format:web": "eslint web/src/**/*.ts --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:api && npm run lint:web"
+    }
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.48.0",
+    "prettier": "^3.0.3"
+  }
+}

@@ -1,0 +1,24 @@
+### Login
+
+POST http://localhost:9000/login
+Content-Type: application/json
+
+{
+    "username": "The Gabbler"
+}
+
+### Gab
+
+POST http://localhost:9000/gabs
+Content-Type: application/json
+Authorization: bearer NTMxNTMxMTQtODBkOC00NzBhLWEyODgtYjljZmNmZjhhNWFm
+
+{
+    "content": "Hello World!"
+}
+
+### List gabs
+
+GET http://localhost:9000/gabs
+Content-Type: application/json
+Authorization: bearer NTMxNTMxMTQtODBkOC00NzBhLWEyODgtYjljZmNmZjhhNWFm

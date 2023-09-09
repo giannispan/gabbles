@@ -1,0 +1,24 @@
+<!-- <div class="actions">
+  <a mat-raised-button color="primary" routerLink="gab">New Gab</a>
+</div> -->
+<div class="search-container">
+  <app-search [placeholder]="'Type something...'" (searchTermEventEmitter)="getSearchTerm($event)"></app-search>
+</div>
+<app-write-gab></app-write-gab>
+<div class="gabs-container">
+  <mat-card *ngIf="gabs.length === 0">
+    <mat-card-content>
+      <p>No gabs found...</p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card *ngFor="let gab of gabs">
+    <mat-card-header>
+      <mat-card-subtitle>at {{ gab.authoredAt }}</mat-card-subtitle>
+      <mat-card-title>{{ gab.author.username }} gabbed:</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-divider></mat-divider>
+      <p>{{ gab.content }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,27 @@
+// .actions {
+//   width: 100%;
+//   display: flex;
+//   justify-content: space-between;
+//   margin-top: 20px;
+// }
+
+mat-card {
+  width: 500px;
+  margin-top: 25px;
+}
+
+mat-divider {
+  margin: 10px 0;
+}
+
+.gabs-container {
+  margin-top: 20px;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.search-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}

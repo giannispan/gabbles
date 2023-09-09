@@ -1,0 +1,7 @@
+<div class="search-container">
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>Search for gab or author</mat-label>
+    <mat-icon matPrefix (click)="onSearchType(term)">search</mat-icon>
+    <input (keyup)="onSearchType(term)" [(ngModel)]="term" type="text" matInput placeholder="{{ placeholder }}" />
+  </mat-form-field>
+</div>
