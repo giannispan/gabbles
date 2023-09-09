@@ -32,13 +32,6 @@ export class AuthService {
   }
 }
 
-// export const activateIfAuthenticated: CanActivateFn = () => {
-//   const authService = new AuthService();
-//   const router = new Router();
-
-//   return authService.isAuthenticated() || router.parseUrl('/login');
-// };
-
 export const activateIfAuthenticated: CanActivateFn = () => {
   return inject(AuthService).isAuthenticated() || inject(Router).parseUrl('/login');
 };
